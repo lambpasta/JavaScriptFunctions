@@ -120,3 +120,25 @@ function filterByFirstLetter(list, letter){
   return filteredVals;
 }
 
+
+
+function rankAscending(valuesList){
+  var tempList = [];
+  for (var i = 0; i < valuesList.length; i++) {
+    
+    var j=0;
+    while (valuesList[i]>tempList[j]){
+      j++;
+    }
+    insertItem(tempList, j, valuesList[i]);
+    
+  }
+  return tempList;
+}
+
+
+
+function getMedian(ascendingList){
+  var middleIndex = Math.round(ascendingList.length/2-1);
+  return ascendingList[middleIndex];
+}
