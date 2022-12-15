@@ -142,3 +142,12 @@ function getMedian(ascendingList){
   var middleIndex = Math.round(ascendingList.length/2-1);
   return ascendingList[middleIndex];
 }
+
+
+
+function roundToPlaces(number, decimals){
+  var power = Math.pow(10, decimals);
+  var tempNum = number*power;
+  var roundedNum = Math.round(tempNum);
+  return roundedNum/power;
+}
