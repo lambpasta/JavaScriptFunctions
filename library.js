@@ -144,10 +144,32 @@ function getMedian(ascendingList){
 }
 
 
-
+/*
+PURPOSE: Round a floating point number off to a certain number of decimal places
+PARAMETERS: the number to round, the amount of digits after the decimal point
+RETURN: a number, rounded
+*/
 function roundToPlaces(number, decimals){
   var power = Math.pow(10, decimals);
   var tempNum = number*power;
   var roundedNum = Math.round(tempNum);
   return roundedNum/power;
+}
+
+
+/*
+PURPOSE: Return the key of the highest value in a dictionary with only keys/numerical values
+PARAMETERS: A dictionary with any amount of keys and all values being numbers
+RETURN: The key which leads to the highest value. Ignores ties.
+*/
+function getHighestValue(dictionary){
+  var temp=0;
+  var largest = "N/A";
+  for (var i = 0; i < Object.keys(dictionary).length; i++) {
+    if (dictionary[Object.keys(dictionary)[i]]>temp){
+      temp = dictionary[Object.keys(dictionary)[i]];
+      largest = Object.keys(dictionary)[i];
+    }
+  }
+  return largest;
 }
