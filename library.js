@@ -173,3 +173,13 @@ function getHighestValue(dictionary){
   }
   return largest;
 }
+
+
+// Randomly selects an item from the list provided and returns it
+// list {list} - a list of items
+// return {item} - a randomly chosen item from the list
+function randomChoose(list){
+  
+    // Do it all in line by picking a random index
+    return list[randomNumber(0, list.length-1)];
+}
