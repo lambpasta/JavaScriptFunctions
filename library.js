@@ -1,3 +1,23 @@
+// Splits a string of comma separated strings into an array of words, ignoring all spaces.
+// string {string} - the string of comma separatd values
+// return {list} - a list with all of the items in the string
+function splitCSV(string){
+  var tempList = [];
+  var tempVal = "";
+  for(var i =0; i<string.length; i++) {
+    if (string[i] == ","){
+      appendItem(tempList, tempVal);
+      tempVal = "";
+    } else {
+      if (string[i] != " "){
+        tempVal += string[i];
+      }
+    }
+  }
+  appendItem(tempList, tempVal);
+  return tempList;
+}
+
 
 // rankAscending - takes a list of numbers, then ranks the list from least to greatest, and returns this
 // valuesList {list of numbers} - the list to sort. it does not get mutated
